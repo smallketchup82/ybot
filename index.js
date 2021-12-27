@@ -37,5 +37,5 @@ bot.on('messageCreate', async message => {
 })
 
 
-
-bot.login('OTI0OTIzMDg5NzY5MzQ5MTIx.YclnwA.K8DB4tsI9bru0s4Yy7O11vrEK1E')
+const config = require("config.json")
+bot.login(config.token)
