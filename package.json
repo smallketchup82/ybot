@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.4.0"
+    "better-sqlite3": "^7.4.6",
+    "cli-progress": "^3.9.1",
+    "discord.js": "^13.4.0",
+    "eslint": "^8.5.0"
   }
 }
