@@ -36,7 +36,7 @@ Delay: This sets the delay between messages that the bot sends. By default there
 **Q: Can I use this bot in multiple servers?**
 Yes, but it will only send messages in one server at a time as you cannot run `y!start` when the bot is already active.
 
-**Q: Will selfhosting this bot get me banned from discord?**
+**Q: Will selfhosting this bot get me banned from discord?**  
 I don't really know. So far it hasn't happened to me but because the bot is constantly sending api requests to discord for a couple days with no break, discord could get suspicious and increase ratelimits or temporarily ban the bot from accessing the discord api for a few hours. Discord.js automatically delays requests to comply with ratelimits, so you don't have to worry about exceeding ratelimits thankfully.
 
 # Help
