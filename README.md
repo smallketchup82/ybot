@@ -17,23 +17,18 @@ The configuration file is config.json. When you first clone the repository you w
 
 ## Configuration options:
 
-Token: Your bot's token
-
-Ownerids: An array of user id's which the bot will consider as owners. The bot will only respond to these users. Put the id's in the quotations and seperate each id with semicolons. Example: `[ "id1", "id2", "id3", ...]`
-
-Activity: Here you can customize the bot's activity. Its set to "Watching the english dictionary" (`["the english dictionary", "WATCHING"]`) by default. To change the status, change the first object in the array with the message you want the bot to have in its status. The second object in the array lets you pick what type of status the bot should have, refer to the [discord.js docs](https://discord.js.org/#/docs/discord.js/stable/typedef/ActivityType) to see what you can set it as. 
-
-Delay: This sets the delay between messages that the bot sends. By default there is no delay and the bot lets Discord.js manage the requests to comply with ratelimits. However you might find it favorable to have your own custom delay in there (discord.js will still make sure it complies with ratelimits even if you set a delay). The minimum delay is 1, the maximum is 30, to disable it set it to false. The delay is is seconds
+**Token:** Your bot's token  
+**Ownerids:** An array of user id's which the bot will consider as owners. The bot will only respond to these users. Put the id's in the quotations and seperate each id with semicolons. Example: `[ "id1", "id2", "id3", ...]`  
+**Activity:** Here you can customize the bot's activity. Its set to "Watching the english dictionary" (`["the english dictionary", "WATCHING"]`) by default. To change the status, change the first object in the array with the message you want the bot to have in its status. The second object in the array lets you pick what type of status the bot should have, refer to the [discord.js docs](https://discord.js.org/#/docs/discord.js/stable/typedef/ActivityType) to see what you can set it as.  
+**Delay:** This sets the delay between messages that the bot sends. By default there is no delay and the bot lets Discord.js manage the requests to comply with ratelimits. However you might find it favorable to have your own custom delay in there (discord.js will still make sure it complies with ratelimits even if you set a delay). The minimum delay is 1, the maximum is 30, to disable it set it to false. The delay is is seconds  
 
 # Commands
-`y!start` Run this in a channel that the bot has access to, the bot will start sending every single word in the english dictionary one by one.
-
-`y!stop` This stops the bot's currently running process. To resume run `y!start` again, the bot will start where it left off.
-
-`y!reset` Use this after running `y!stop` or when the bot is idle. This command resets the bot's progress back to 0. **This will remove your current progress**.
+`y!start` Run this in a channel that the bot has access to, the bot will start sending every single word in the english dictionary one by one.  
+`y!stop` This stops the bot's currently running process. To resume run `y!start` again, the bot will start where it left off.  
+`y!reset` Use this after running `y!stop` or when the bot is idle. This command resets the bot's progress back to 0. **This will remove your current progress**.  
 
 # FAQ
-**Q: Can I use this bot in multiple servers?**
+**Q: Can I use this bot in multiple servers?**  
 Yes, but it will only send messages in one server at a time as you cannot run `y!start` when the bot is already active.
 
 **Q: Will selfhosting this bot get me banned from discord?**  
