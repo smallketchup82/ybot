@@ -1,3 +1,6 @@
 {
-	"token":""
+	"token":"PUT_BOT_TOKEN_HERE",
+	"ownerids": ["PUT_OWNER_IDS_HERE"],
+	"activity": ["the english dictionary", "WATCHING"],
+	"delay": false
 }
