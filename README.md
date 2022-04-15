@@ -11,8 +11,10 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands.
 
 ## Running with docker
-To build: `docker build --tag ybot .` (run this in the directory where you cloned the repo)
-To run: `docker run -d --restart always ybot`
+https://hub.docker.com/repository/docker/smallketchup/ybot
+
+1. Get the image off of the repository: `docker pull smallketchup/ybot
+2. Run: `docker run -d --restart always smallketchup/ybot`
 
 Make sure to check this repository every so often for updates.
 
