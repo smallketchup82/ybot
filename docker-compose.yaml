@@ -1,6 +1,6 @@
 services:
   ybot:
-    image: smallketchup/ybot
+    image: ybot
     container_name: ybot
     build: .
     restart: always
