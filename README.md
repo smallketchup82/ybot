@@ -8,15 +8,20 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 4. Run `npm install` while in the bot's directory
 5. Start the bot with `node .`. We recommend using PM2 though, to start with PM2 run `pm2 start ecosystem.config.js`
 6. Invite the bot to your discord server and give it necessary permissions.
-7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands.
-
-## Running with docker
-https://hub.docker.com/repository/docker/smallketchup/ybot
-
-1. Get the image off of the repository: `docker pull smallketchup/ybot
-2. Run: `docker run -d --restart always smallketchup/ybot`
+7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands.  
 
 Make sure to check this repository every so often for updates.
+
+## Installing with docker
+
+1. Clone the repository
+2. Edit config.json
+3. Run `docker-compose up -d` in the directory where you cloned the repo  
+
+To restart the bot run `docker-compose restart`  
+To stop the bot run `docker-compose down`  
+To start it again run `docker-compose up -d`  
+
 
 # Configuration
 The configuration file is config.json. When you first clone the repository you will see config.json.example. Rename that file to config.json and fill it in
