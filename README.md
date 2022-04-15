@@ -13,9 +13,10 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 Make sure to check this repository every so often for updates.
 
 ## Installing with docker
+Easiest method
 
 1. Clone the repository
-2. Edit config.json
+2. Edit config.json to put in your bot token
 3. Run `docker-compose up -d` in the directory where you cloned the repo  
 
 To restart the bot run `docker-compose restart`  
