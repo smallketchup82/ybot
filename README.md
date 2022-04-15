@@ -10,6 +10,10 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 6. Invite the bot to your discord server and give it necessary permissions.
 7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands.
 
+## Running with docker
+To build: `docker build --tag ybot .` (run this in the directory where you cloned the repo)
+To run: `docker run -d --restart always ybot`
+
 Make sure to check this repository every so often for updates.
 
 # Configuration
