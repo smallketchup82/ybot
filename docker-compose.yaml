@@ -1,0 +1,13 @@
+services:
+  ybot:
+    image: smallketchup/ybot
+    container_name: ybot
+    build: .
+    restart: always
+    volumes:
+      - type: volume
+        source: ybotdb
+        target: /app/data
+
+volumes:
+  ybotdb:
