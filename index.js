@@ -18,10 +18,11 @@ if (!configenv.TOKEN && fs.existsSync('./config.json')) { // If there is no envi
 	config = require('./config.json');
 } else if (configenv.TOKEN) { // If config.json doesnt exist and the environment variable for TOKEN was set, then assume a Docker installation.
 	console.log(chalk.green('Enabled Docker Mode'));
+	config = {};
 	config.token = configenv.TOKEN;
 	if (configenv.ACTIVITY) config.activity = configenv.ACTIVITY;
-	if (configenv.ownerids) config.ownerids = configenv.OWNERIDS;
-	if (configenv.delay) config.delay = configenv.DELAY;
+	if (configenv.OWNERIDS) config.ownerids = configenv.OWNERIDS;
+	if (configenv.DELAY) config.delay = configenv.DELAY;
 } else { // Error out because no either config.json exists nor has the TOKEN environment variable been set.
 	console.warn(chalk.red('ERROR: No configuration file/environment variables found!\nPlease make sure that you have a config.json or have started the Docker container with the proper environment variables.'));
 	process.exit(5);
@@ -43,7 +44,7 @@ var stop = false;
 var status = 0; // 0 = Idle | 1 = Working
 
 bot.on('messageCreate', async message => {
-	if (!config.ownerids.includes(message.author.id) || message.author.bot || message.author.system) return;
+	if (config.ownerids && !config.ownerids.includes(message.author.id) || message.author.bot || message.author.system) return;
 	const args = message.content.slice('y!'.length).trim().split(/ +/);
 
 	switch (args[0].toLowerCase()) {
