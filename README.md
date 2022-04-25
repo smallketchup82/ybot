@@ -4,7 +4,7 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 # Installation
 Manual method
 
-1. Clone the repository to your computer. (Ubuntu 20.04 server recommended as I have only tested it on that OS)
+1. Clone the repository to your device. (Ubuntu OS recommended as I have only tested it on that OS)
 2. Rename config.json.example to config.json and look below for configuration documentation
 3. Open a terminal and go to the directory where you cloned the repository.
 4. Run `npm install` while in the bot's directory
