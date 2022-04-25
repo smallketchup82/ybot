@@ -2,6 +2,8 @@
 ybot is a bot that puts the letter "y" before every single word in the english dictionary.
 
 # Installation
+Manual method
+
 1. Clone the repository to your computer. (Ubuntu 20.04 server recommended as I have only tested it on that OS)
 2. Rename config.json.example to config.json and look below for configuration documentation
 3. Open a terminal and go to the directory where you cloned the repository.
@@ -12,17 +14,23 @@ ybot is a bot that puts the letter "y" before every single word in the english d
 
 Make sure to check this repository every so often for updates.
 
-## Installing with docker
+## Installing with docker-compose
 Easiest method
 
 1. Clone the repository
-2. Edit config.json to put in your bot token
+2. Edit config.json according to the documentation below
 3. Run `docker-compose up -d` in the directory where you cloned the repo  
 
 To restart the bot run `docker-compose restart`  
 To stop the bot run `docker-compose down`  
 To start it again run `docker-compose up -d`  
 
+## Installing with docker
+Minimal method
+1. Run `docker pull smallketchup/ybot` (optional since next step basically does this for you)
+2. Then run `docker run -v ybotdb:/app/data --env TOKEN=token_here --restart always --name ybot -d smallketchup/ybot`
+
+Refer to the docker docs for help with starting/restarting/stopping.
 
 # Configuration
 The configuration file is config.json. When you first clone the repository you will see config.json.example. Rename that file to config.json and fill it in
