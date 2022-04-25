@@ -5,15 +5,38 @@ const { readFile } = require('fs/promises');
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 const Enmap = require('enmap');
 const cliprog = require('cli-progress');
-const config = require('./config.json');
+const fs = require('fs');
+const chalk = require('chalk');
+
+console.log('Initializing');
+
+// If dockermode is enabled the bot will completely ignore config.js and instead use environment variables
+const configenv = process.env;
+var config;
+
+if (!configenv.TOKEN && fs.existsSync('./config.json')) { // If there is no environment variable for TOKEN and config.json exists, assume standard configuration (config.json)
+	config = require('./config.json');
+} else if (configenv.TOKEN) { // If config.json doesnt exist and the environment variable for TOKEN was set, then assume a Docker installation.
+	console.log(chalk.green('Enabled Docker Mode'));
+	config.token = configenv.TOKEN;
+	if (configenv.ACTIVITY) config.activity = configenv.ACTIVITY;
+	if (configenv.ownerids) config.ownerids = configenv.OWNERIDS;
+	if (configenv.delay) config.delay = configenv.DELAY;
+} else { // Error out because no either config.json exists nor has the TOKEN environment variable been set.
+	console.warn(chalk.red('ERROR: No configuration file/environment variables found!\nPlease make sure that you have a config.json or have started the Docker container with the proper environment variables.'));
+	process.exit(5);
+}
 
 const db = new Enmap({
 	name: 'maindb',
 });
 
 bot.once('ready', () => {
-	console.log(`Logged in as ${bot.user.tag} (${bot.user.id})!`);
+	console.log(chalk.green(`Logged in as ${bot.user.tag} (${bot.user.id})!`));
+
+	console.log('Applying configuration options');
 	bot.user.setActivity(config.activity[0], { type: config.activity[1] });
+	console.log(chalk.green('Bot online!'));
 });
 
 var stop = false;
