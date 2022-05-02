@@ -1,6 +1,6 @@
 # ybot
 ybot is a bot that puts the letter "y" before every single word in the english dictionary.
-
+Inspired by yname from the Galaxy Community
 # Installation
 Manual method
 
