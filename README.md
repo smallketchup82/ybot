@@ -55,4 +55,4 @@ Yes, but it will only send messages in one server at a time as you cannot run `y
 I don't really know. So far it hasn't happened to me but because the bot is constantly sending api requests to discord for a couple days with no break, discord could get suspicious and increase ratelimits or temporarily ban the bot from accessing the discord api for a few hours. Discord.js automatically delays requests to comply with ratelimits, so you don't have to worry about exceeding ratelimits thankfully.
 
 # Help
-For support with ybot you can dm me on discord sugondese#5733
+For support with ybot you can direct message me on discord sugondese#5733
