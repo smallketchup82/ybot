@@ -20,9 +20,6 @@ if (!configenv.TOKEN && fs.existsSync('./config.json')) { // If there is no envi
 	console.log(chalk.green('Enabled Docker Mode'));
 	config = {};
 	config.token = configenv.TOKEN;
-	if (configenv.ACTIVITY) config.activity = configenv.ACTIVITY;
-	if (configenv.OWNERIDS) config.ownerids = configenv.OWNERIDS;
-	if (configenv.DELAY) config.delay = configenv.DELAY;
 } else { // Error out because no either config.json exists nor has the TOKEN environment variable been set.
 	console.warn(chalk.red('ERROR: No configuration file/environment variables found!\nPlease make sure that you have a config.json or have started the Docker container with the proper environment variables.'));
 	process.exit(5);
@@ -33,10 +30,17 @@ const db = new Enmap({
 });
 
 bot.once('ready', () => {
+        if (configenv.ACTIVITY) config.activity = configenv.ACTIVITY;
+        if (configenv.OWNERIDS) config.ownerids = configenv.OWNERIDS;
+        if (configenv.DELAY) config.delay = configenv.DELAY;
 	console.log(chalk.green(`Logged in as ${bot.user.tag} (${bot.user.id})!`));
 
 	console.log('Applying configuration options');
-	bot.user.setActivity(config.activity[0], { type: config.activity[1] });
+	try {
+		bot.user.setActivity(config.activity[0], { type: config.activity[1] });
+	} catch(err) {
+		bot.user.setActivity("the english dictionary", { type: "WATCHING" });
+	}
 	console.log(chalk.green('Bot online!'));
 });
 
