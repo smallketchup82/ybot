@@ -20,7 +20,7 @@ if (!configenv.TOKEN && fs.existsSync('./config.json')) { // If there is no envi
 	console.log(chalk.green('Enabled Docker Mode'));
 	config = {};
 	config.token = configenv.TOKEN;
-} else { // Error out because no either config.json exists nor has the TOKEN environment variable been set.
+} else { // Error out because neither config.json exists nor has the TOKEN environment variable been set.
 	console.warn(chalk.red('ERROR: No configuration file/environment variables found!\nPlease make sure that you have a config.json or have started the Docker container with the proper environment variables.'));
 	process.exit(5);
 }
