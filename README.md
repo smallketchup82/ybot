@@ -13,7 +13,7 @@ Manual method
 6. Invite the bot to your discord server and give it necessary permissions
 7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands
 
-Make sure to check this repository every so often for updates
+Make sure to pull the repository every so often for updates
 
 ## Installing with docker-compose
 Easiest method
