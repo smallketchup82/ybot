@@ -57,3 +57,4 @@ I don't really know. So far it hasn't happened to me but because the bot is cons
 
 # Help
 For support with ybot you can direct message me on discord sugondese#5733
+Pull requests are welcome!
