@@ -5,15 +5,15 @@ https://hub.docker.com/r/smallketchup/ybot
 # Installation
 Manual method
 
-1. Clone the repository to your device. (Ubuntu OS recommended as I have only tested it on that OS)
+1. Clone the repository
 2. Rename config.json.example to config.json and look below for configuration documentation
-3. Open a terminal and go to the directory where you cloned the repository.
+3. Open a terminal and go to the directory where you cloned the repository
 4. Run `npm install` while in the bot's directory
 5. Start the bot with `node .`. We recommend using PM2 though, to start with PM2 run `pm2 start ecosystem.config.js`
-6. Invite the bot to your discord server and give it necessary permissions.
-7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands.  
+6. Invite the bot to your discord server and give it necessary permissions
+7. Run y!start in any channel and watch the bot go. Refer to the commands section for more commands
 
-Make sure to check this repository every so often for updates.
+Make sure to check this repository every so often for updates
 
 ## Installing with docker-compose
 Easiest method
