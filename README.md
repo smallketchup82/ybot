@@ -26,13 +26,6 @@ To restart the bot run `docker-compose restart`
 To stop the bot run `docker-compose down`  
 To start it again run `docker-compose up -d`  
 
-## Installing with docker
-Minimal method
-1. Run `docker pull smallketchup/ybot` (optional since next step basically does this for you)
-2. Then run `docker run -v ybotdb:/app/data --env TOKEN=token_here --restart always --name ybot -d smallketchup/ybot`
-
-Refer to the docker docs for help with starting/restarting/stopping.
-
 # Configuration
 The configuration file is config.json. When you first clone the repository you will see config.json.example. Rename that file to config.json and fill it in
 
