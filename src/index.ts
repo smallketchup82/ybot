@@ -62,7 +62,7 @@ class Ybot {
 	}
 }
 
-export const db = new Database('database.db', { verbose: console.log})
+export const db = new Database('database.db')
 const bot = new SapphireClient({ intents: 37424 })
 
 
