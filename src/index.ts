@@ -1,9 +1,10 @@
+// Version 3.0.1
 import * as dotenv from 'dotenv'
 import * as Discord from 'discord.js'
 import chalk from 'chalk'
 import fs from 'fs'
 import Database from 'better-sqlite3'
-import { SapphireClient } from '@sapphire/framework'
+import { SapphireClient, LogLevel } from '@sapphire/framework'
 dotenv.config()
 
 export var status: any = {}
@@ -62,8 +63,8 @@ class Ybot {
 	}
 }
 
-export const db = new Database('database.db')
-const bot = new SapphireClient({ intents: 37424 })
+export const db = new Database('database.db', { verbose: process.env.VERBOSE ? console.log : undefined })
+const bot = new SapphireClient({ intents: 37424, logger: { level: process.env.VERBOSE ? LogLevel.Debug : LogLevel.Info } })
 
 
 export let ybot: Ybot;
