@@ -7,6 +7,8 @@ import Database from 'better-sqlite3'
 import { SapphireClient, LogLevel } from '@sapphire/framework'
 dotenv.config()
 
+const verbose = !process.env.VERBOSE === true
+
 export var status: any = {}
 
 class Ybot {
@@ -47,7 +49,7 @@ class Ybot {
 			if (index === wordlist.length - 1) {
 				db.prepare(`DELETE FROM savedindex WHERE guild = ${server.id.toString()} AND channel = ${channel.id.toString()}`).run()
 			}
-			if (process.env.VERBOSE) console.log("index: " + index)
+			if (verbose) console.log("index: " + index)
 		}
 
 		return `Done!`
@@ -63,8 +65,8 @@ class Ybot {
 	}
 }
 
-export const db = new Database('database.db', { verbose: process.env.VERBOSE ? console.log : undefined })
-const bot = new SapphireClient({ intents: 37424, logger: { level: process.env.VERBOSE ? LogLevel.Debug : LogLevel.Info } })
+export const db = new Database('database.db', { verbose: verbose ? console.log : undefined })
+const bot = new SapphireClient({ intents: 37424, logger: { level: verbose ? LogLevel.Debug : LogLevel.Info } })
 
 
 export let ybot: Ybot;
