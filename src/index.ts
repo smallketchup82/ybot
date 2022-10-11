@@ -78,14 +78,12 @@ bot.once('ready', async () => {
 	const channels = db.prepare('SELECT guild, channel FROM savedindex').all();
 
 	for (const key of channels) {
-		console.log(key)
 		await bot.guilds.fetch()
 		const guild = bot.guilds.cache.get(key.guild.toString())
 		if (!guild) {
 			db.prepare('DELETE FROM savedindex WHERE guild = ?').run(key.guild.toString())
 			return
 		}
-		console.log(guild)
 
 		await guild.channels.fetch();
 		if (!guild.channels.cache.has(key.channel)) {
