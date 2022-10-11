@@ -46,7 +46,7 @@ class Ybot {
 			if (index === wordlist.length - 1) {
 				db.prepare(`DELETE FROM savedindex WHERE guild = ${server.id.toString()} AND channel = ${channel.id.toString()}`).run()
 			}
-			console.log("index: " + index)
+			if (process.env.VERBOSE) console.log("index: " + index)
 		}
 
 		return `Done!`
@@ -66,10 +66,9 @@ export const db = new Database('database.db')
 const bot = new SapphireClient({ intents: 37424 })
 
 
-
 export let ybot: Ybot;
 bot.once('ready', async () => {
-    console.log(chalk.greenBright("Bot Online!"))
+    console.log(chalk.greenBright(`Bot Online!\nLogged in as ${bot.user?.tag}`))
 	db.prepare('create table if not exists savedindex (guild TEXT NOT NULL, channel TEXT NOT NULL, progress INT)').run()
 	bot.user?.setActivity('the english dictionary', { type: 'WATCHING' })
 	ybot = new Ybot()

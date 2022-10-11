@@ -7,9 +7,9 @@ Manual method
 1. Clone the repository
 3. Open a terminal and go to the directory where you cloned the repository
 4. Run `npm install` to install the dependencies
-5. Compile with `tsc` or install [ts-node](https://www.npmjs.com/package/ts-node)
-6. Rename .env.example to .env and fill it out. Move it to the dist directory
-7. Cd into the dist directory and run the bot
+5. Compile with `tsc`
+6. Rename .env.example to .env and fill it out
+7. Run the bot by running `node dist/index.js` or `node .`
 8. Invite the bot to your discord server by creating an invite for it with the required permissions. Make sure to give the bot the `bot` and `application.commands` scopes
 9. Run run /start in any channel and watch the bot go. Refer to the commands section for more commands
 
