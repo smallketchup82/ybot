@@ -1,13 +1,13 @@
-FROM node:16
-
-ENV NODE_ENV=production
+FROM node:lts
 
 WORKDIR /app
 
-COPY ["package.json", "package-lock.json*", "./"]
+COPY ["package.json", "package-lock.json*", "tsconfig.json", "./"]
 
-RUN npm install --production
+RUN npm install && npm install typescript -g
 
 COPY . .
 
-CMD [ "node", "." ]
+RUN tsc
+
+CMD ["node", "./dist/index.js"]

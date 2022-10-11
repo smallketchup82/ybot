@@ -1,0 +1,9 @@
+services:
+  gpediabot: 
+    image: ybot
+    container_name: ybot
+    build: .
+    restart: always
+    env_file: .env
+    volumes:
+      - ./database.db:/app/database.db
