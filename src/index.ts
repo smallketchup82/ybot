@@ -43,7 +43,12 @@ class Ybot {
 				continue
 			}
 
-			await channel.send("y" + word.toString().trim())
+			try {
+				await channel.send("y" + word.toString().trim())
+			}
+			catch (err: any) {
+				console.error(err.stack)
+			}
 			db.prepare(`UPDATE savedindex SET progress = ${index} WHERE guild = ${server.id.toString()} AND channel = ${channel.id.toString()}`).run()
 
 			if (index === wordlist.length - 1) {
